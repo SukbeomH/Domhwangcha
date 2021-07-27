@@ -13,17 +13,17 @@ void UTimer::NativeConstruct()
 
 	if (CurrentGameState == EGameState::SELECT)
 	{
-		DHCLOG(Warning, TEXT("CurrentGameState : SELECT"));
+		DHCLOG(Warning, TEXT("CurrentState : %d"), CurrentGameState);
 		CountdownTime = 15;
 	}
 	else if (CurrentGameState == EGameState::RPS)
 	{
-		DHCLOG(Warning, TEXT("CurrentGameState : RPS"));
+		DHCLOG(Warning, TEXT("CurrentState : %d"), CurrentGameState);
 		CountdownTime = 3;
 	}
 	else if (CurrentGameState == EGameState::EVADERLOCATION)
 	{
-		DHCLOG(Warning, TEXT("CurrentGameState : EVADERLOCATION"));
+		DHCLOG(Warning, TEXT("CurrentState : %d"), CurrentGameState);
 		CountdownTime = 10;
 	}
 
