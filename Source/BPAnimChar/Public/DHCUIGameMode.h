@@ -25,10 +25,16 @@ private:
 		TSubclassOf<class ADHCUIPlayerController> UIPlayerControllerClass;
 
 public: 
-	/*
+	
 	UFUNCTION(BlueprintCallable, Category = "UMG_Game") 
 	void ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass); 
-	*/
+
+	UFUNCTION(BlueprintCallable, Category = "StateControl")
+		EGameState GetCurrentState();
+
+	UFUNCTION(BlueprintCallable, Category = "StateControl")
+		void SetCurrentState(EGameState NewState);
+	
 protected: 
 	virtual void BeginPlay() override; 
 	
@@ -54,7 +60,7 @@ protected:
 	UPROPERTY()
 		class UUserWidget* RPSUI;
 
-private:
+public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State", meta = (AllowPrivateAccess = true))
 		EGameState mState = EGameState::TITLE;
 

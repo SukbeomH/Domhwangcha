@@ -10,7 +10,7 @@ ADHCUIGameMode::ADHCUIGameMode()
 	DefaultPawnClass = PawnClass;
 	PlayerControllerClass = UIPlayerControllerClass;
 }
-/*
+
 void ADHCUIGameMode::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass)
 {
 	if (nullptr != CurrentWidget)
@@ -29,7 +29,17 @@ void ADHCUIGameMode::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass)
 		}
 	}
 }
-*/
+
+EGameState ADHCUIGameMode::GetCurrentState()
+{
+	return mState;
+}
+
+void ADHCUIGameMode::SetCurrentState(EGameState NewState)
+{
+	mState = NewState;
+}
+
 void ADHCUIGameMode::BeginPlay()
 {
 	Super::BeginPlay();

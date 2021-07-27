@@ -2,13 +2,15 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "BPAnimChar.h"
 #include "GameFramework/GameMode.h"
 #include "DHCGameMode.generated.h"
 
 /**
  * 
  */
+
+
 UCLASS()
 class BPANIMCHAR_API ADHCGameMode : public AGameMode
 {

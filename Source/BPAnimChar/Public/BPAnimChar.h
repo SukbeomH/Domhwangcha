@@ -18,6 +18,20 @@ enum class EGameState : uint8
 	GAMESET
 };
 
+UENUM(BlueprintType)
+enum class EPlayerRole : uint8
+{
+	EVADER,
+	CHASER
+};
+
+UENUM(BlueprintType)
+enum class EPreviousGameResult : uint8
+{
+	WIN,
+	DEFEATED
+};
+
 DECLARE_LOG_CATEGORY_EXTERN(DHC, Log, All);
 #define DHCLOG_CALLINFO (FString(__FUNCTION__) + TEXT("(") + FString::FromInt(__LINE__) + TEXT(")"))
 #define DHCLOG_S(Verbosity) UE_LOG(DHC, Verbosity, TEXT("%s"), *DHCLOG_CALLINFO)

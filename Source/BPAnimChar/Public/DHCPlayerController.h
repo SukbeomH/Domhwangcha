@@ -9,13 +9,27 @@
 /**
  * 
  */
+
+
 UCLASS()
 class BPANIMCHAR_API ADHCPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
+public:
 	ADHCPlayerController();
 
-	virtual void PostInitializeComponents() override;
 
+	UFUNCTION()
+		void SetCurrentPlayerRole(EPlayerRole NewRole);
+
+	UFUNCTION()
+		void SetPreviousGameResult(EPreviousGameResult Result);
+
+private:
+	UPROPERTY()
+		EPlayerRole CurrentRole;
+
+	UPROPERTY()
+		EPreviousGameResult PreviousGameResult;
 };

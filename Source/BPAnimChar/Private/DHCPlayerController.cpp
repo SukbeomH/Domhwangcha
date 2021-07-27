@@ -5,9 +5,22 @@
 
 ADHCPlayerController::ADHCPlayerController()
 {
+	if (EPlayerRole::CHASER == CurrentRole)
+	{
 
+	}
+	else
+	{
+		// EVADER 시점, UI 설정
+	}
 }
 
-void ADHCPlayerController::PostInitializeComponents()
+void ADHCPlayerController::SetCurrentPlayerRole(EPlayerRole NewRole)
 {
+	CurrentRole = NewRole;
+}
+
+void ADHCPlayerController::SetPreviousGameResult(EPreviousGameResult Result)
+{
+	PreviousGameResult = Result;
 }
