@@ -9,6 +9,7 @@ ADHCUIGameMode::ADHCUIGameMode()
 {
 	DefaultPawnClass = PawnClass;
 	PlayerControllerClass = UIPlayerControllerClass;
+	mState = EGameState::TITLE;
 }
 
 void ADHCUIGameMode::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass)

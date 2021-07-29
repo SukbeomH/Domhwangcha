@@ -62,6 +62,6 @@ protected:
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State", meta = (AllowPrivateAccess = true))
-		EGameState mState = EGameState::TITLE;
+		EGameState mState;
 
 };
