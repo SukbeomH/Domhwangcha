@@ -23,17 +23,19 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category=Timer)
 		int32 CountdownTime;
 
-	UPROPERTY(BlueprintReadWrite, Category=Timer)
-		int32 IntervalTime;
-
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, Category = Timer)
 		EGameState CurrentGameState;
 
-	UFUNCTION()
+	UPROPERTY(BlueprintReadWrite, Category = Timer)
+		bool CountdownStart = 0;
+
+	UFUNCTION(BlueprintCallable)
 	void UpdateTimerDisplay();
 
 	UFUNCTION()
 	void AdvancedTimer();
 
 	FTimerHandle CountdownTimerHandle;
+
+
 };

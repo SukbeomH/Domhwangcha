@@ -35,30 +35,18 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "StateControl")
 		void SetCurrentState(EGameState NewState);
 	
-protected: 
+
 	virtual void BeginPlay() override; 
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 		TSubclassOf<UUserWidget> StartingWidgetClass; 
 	
-	UPROPERTY() 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 		UUserWidget* CurrentWidget;
 
-	// 게임을 시작하면 UI 인스턴스를 생성하고, 이를 뷰포트에 띄운 후에 입력은 UI에만 전달되도록 제작
-	UPROPERTY()
-		class UUserWidget* TitleUI;
 
-	UPROPERTY()
-		class UUserWidget* LoginUI;
-
-	UPROPERTY()
-		class UUserWidget* MatchingUI;
-
-	UPROPERTY()
-		class UUserWidget* SelectUI;
-
-	UPROPERTY()
-		class UUserWidget* RPSUI;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
+		TSubclassOf<UUserWidget> NextWidgetClass;
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State", meta = (AllowPrivateAccess = true))

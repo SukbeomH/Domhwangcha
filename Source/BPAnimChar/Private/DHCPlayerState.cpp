@@ -10,7 +10,7 @@ ADHCPlayerState::ADHCPlayerState()
 	AverageEvadeTime = 0.0f;
 	WinNum = 0;
 	DefeatedNum = 0;
-	SaveSlotName = TEXT("Player1");
+
 }
 
 float ADHCPlayerState::RenewAverageChaseTime()

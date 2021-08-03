@@ -7,28 +7,29 @@
 
 void UTimer::NativeConstruct()
 {
+	DHCLOG(Warning, TEXT("Constructed Timer"));
+
 	auto GameMode = Cast<ADHCUIGameMode>(GetWorld()->GetAuthGameMode());
 	CurrentGameState = GameMode->GetCurrentState();
 	DHCLOG(Warning, TEXT("CurrentState : %d"), CurrentGameState);
 
 	if (CurrentGameState == EGameState::SELECT)
 	{
-		// 다음 화면인 SELECT의 시간 제한 설정
 		DHCLOG(Warning, TEXT("CurrentState : %d"), CurrentGameState);
 		CountdownTime = 15;
+
 	}
 	else if (CurrentGameState == EGameState::RPS)
 	{
-		// 다음 화면인 RPS의 시간 제한 설정
 		DHCLOG(Warning, TEXT("CurrentState : %d"), CurrentGameState);
 		CountdownTime = 3;
 	}
 	else if (CurrentGameState == EGameState::EVADERLOCATION)
 	{
-		// 다음 화면인 EVADERLOCATIONSELECT의 시간 제한 설정
 		DHCLOG(Warning, TEXT("CurrentState : %d"), CurrentGameState);
 		CountdownTime = 10;
 	}
+	
 
 	UpdateTimerDisplay();
 
@@ -50,6 +51,7 @@ void UTimer::AdvancedTimer()
 	{
 		// 카운트다운이 완료되면 타이머를 중지
 		GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
-		
+		auto GameMode = Cast<ADHCUIGameMode>(GetWorld()->GetAuthGameMode());
+		GameMode->ChangeMenuWidget(GameMode->NextWidgetClass);
 	}
 }
